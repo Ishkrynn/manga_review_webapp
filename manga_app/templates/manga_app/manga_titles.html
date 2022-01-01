@@ -1,0 +1,16 @@
+{% extends "manga_app/base.html" %}
+
+{% block content %}
+
+    <p>Manga Titles</p>
+
+    <ul>
+        {% for manga_title in manga_titles %}
+            <li>{{ manga_title }}</li>
+        {% empty %}
+            <li>No manga titles have been added yet.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
+        
