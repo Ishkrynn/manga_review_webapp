@@ -1,0 +1,18 @@
+{% extends "manga_app/base.html" %}
+
+{% block content %}
+
+    <p>Manga: {{ manga }}</p>
+
+    <p>Review:</p>
+    <ul>
+        {% for review in reviews %}
+        <li>
+            <p>{{ review }}</p>
+        </li>
+        {% empty %}
+            <li>There are no entries for this topic yet.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

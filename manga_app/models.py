@@ -12,13 +12,10 @@ class MangaTitle(models.Model):
 
 class Review(models.Model):
     """A review for a specific manga"""
-    manga = models.ForeignKey(MangaTitle, on_delete=models.CASCADE)
+    manga_title = models.ForeignKey(MangaTitle, on_delete=models.CASCADE)
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         """Return a string representation of the model."""
-        if len(self.text) > 50:
-            return f"{self.text[:50]}..."
-        else:
-            return self.text
+        return self.text

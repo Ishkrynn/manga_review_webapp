@@ -6,7 +6,9 @@
 
     <ul>
         {% for manga_title in manga_titles %}
-            <li>{{ manga_title }}</li>
+            <li>
+                <a href="{% url 'manga_app:manga_title' manga_title.id %}">{{ manga_title }}</a>
+            </li>
         {% empty %}
             <li>No manga titles have been added yet.</li>
         {% endfor %}
